@@ -1,0 +1,4 @@
+{
+    "exec": "tsx ./server.mts",
+    "ext": ".mts,.mjs,.ts,.tsx,.js"
+  }
