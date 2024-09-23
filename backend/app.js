@@ -17,15 +17,15 @@ app.post("/webhook/:wecomUuid", async (req, res) => {
   if (data.event_name === "push") {
     content = "### Gitlab PUSH 🚀";
     content += "\n\n";
-    content += "实例: " + headers["x-gitlab-instance"];
+    content += "============"
+    content += "\n\n";
+    content += "**【实例】**：" + headers["x-gitlab-instance"];
     content += "\n";
-    content += "用户:" + data.user_username;
+    content += "**【用户】**：" + data.user_username;
     content += "\n";
-    content += "项目:" + data.project?.path_with_namespace;
+    content += "**【项目】**：" + data.project?.path_with_namespace;
     content += "\n";
-    content += "分支:" + data.ref;
-    content += "\n";
-    content += "Commit数:" + data.total_commits_count;
+    content += "**【分支】**：" + data.ref;
   }
 
   if (content !== "") {

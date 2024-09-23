@@ -45,7 +45,7 @@ export default function CodeArea({ url }: TCodeArea) {
         >
           {gitlabWebhook !== ""
             ? gitlabWebhook
-            : "请输入合理的企业微信webhook地址"}
+            : "请输入有效的企业微信webhook地址"}
         </code>
       </div>
     </>
