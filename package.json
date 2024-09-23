@@ -4,20 +4,22 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "dev:backend": "npm run dev -w backend",
-      "dev:frontend": "npm run dev -w frontend",
-      "build": "rm -rf backend/dist && npm run build -w frontend && cp -r frontend/dist backend",
-      "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "dev:backend": "npm run dev -w backend",
+        "dev:frontend": "npm run dev -w frontend",
+        "build": "rm -rf backend/dist && npm run build -w frontend && cp -r frontend/dist backend",
+        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "workspaces": [
-      "backend",
-      "frontend"
+        "backend",
+        "frontend"
     ],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "concurrently": "^9.0.0"
+        "concurrently": "^9.0.0"
+    },
+    "dependencies": {
+        "vercel": "^37.5.3"
     }
-  }
-  
+}

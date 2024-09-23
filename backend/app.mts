@@ -3,6 +3,6 @@ const app = express();
 app.use(express.json());
 app.use(express.static('dist/'));
 app.get('/', (req, res) => {
-    res.send('Hello Worrrrld!')
+    res.send({hello: 'world'});
   })
 export default app;
