@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.static("dist/"));
 app.post("/webhook/:wecomUuid", async (req, res) => {
   const data = req.body;
+
   const headers = req.headers;
   const wecomUuid = req.params.wecomUuid;
 
@@ -26,12 +27,25 @@ app.post("/webhook/:wecomUuid", async (req, res) => {
     content += "**【项目】**：" + data.project?.path_with_namespace;
     content += "\n";
     content += "**【分支】**：" + data.ref;
+
+    if (req.query?.verbose === "true")  {
+      content += "\n";
+      content += "--------\n\n"
+      content += "**COMMITS：**\n\n";
+      content += "```\n"; 
+      data.commits.forEach(element => {
+        content += `· ${element.id.substring(0, 7)}, ${element.author.name}: `;
+        content += `"${element.message.replace(/\n+$/, '')}"\n`;
+      });
+      content += "```\n";
+    }
   }
 
   if (content !== "") {
     try {
       const wecomWebhook = `${BASE_URL}${wecomUuid}`;
       console.log(wecomWebhook);
+      console.log(content)
       await axios.post(wecomWebhook, {
         msgtype: "markdown",
         markdown: {
