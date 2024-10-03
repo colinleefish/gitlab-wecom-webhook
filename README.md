@@ -14,10 +14,7 @@
 
 ### 下载和部署
 
-```shell
-docker pull ghcr.io/colinleefish/gitlab-wecom-webhook:latest
-```
-
+docker-compose.yml
 ```docker-compose.yml
 services:
   app:
