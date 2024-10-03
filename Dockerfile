@@ -25,7 +25,7 @@ RUN npm install
 COPY --from=frontend-build /app/dist ./dist
 
 # Expose the port your backend listens on
-EXPOSE 3000
+EXPOSE 4000
 
 # Start the server
 CMD ["node", "server.js"]
