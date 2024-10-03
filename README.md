@@ -30,14 +30,10 @@ services:
 
 ### 参数和效果
 
-**PUSH版（不带 COMMIT 信息）**
-
-直接使用生成的 Webhook 即可。
+PUSH版（不带 COMMIT 信息）：直接使用生成的 Webhook 即可。
 
 ![gitlab-wecom-webhook-example](https://github.com/user-attachments/assets/2e0edcc8-aa60-4087-9db0-61a220bf3cf6)
 
-**PUSH版（带 COMMIT 信息）**
-
-在 Webhook 后面加上 GET 参数：`?verbose=true`
+PUSH版（带 COMMIT 信息）：在 Webhook 后面加上 GET 参数：`?verbose=true`
 
 ![gitlab-wecom-webhook-example-verbose](https://github.com/user-attachments/assets/db0e2a19-b96a-4903-a28a-f2f4499b15c8)
